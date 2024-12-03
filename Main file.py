@@ -7,6 +7,7 @@ def show_board(board) :
             print('\n')
         print(f" {board[i]} ", end="|") if (i + 1) % 3 != 0 else print(f" {board[i]} ")
 
+#Functiom to take player's choice
 def player_choice(index,board,player_move) :
     ind = int(input("Enter the index (0-8) at which you want to play :"))
     while(ind > 9 and ind>0 and ind in index) :
@@ -17,6 +18,7 @@ def player_choice(index,board,player_move) :
     index.append(ind)
     board[ind] = player_move
 
+#Function to make computer's choice
 def computer_choice(board,index,comp_move) :
     ind = random.randint(0,8)
     while(ind in index) :
@@ -24,6 +26,7 @@ def computer_choice(board,index,comp_move) :
     index.append(ind)
     board[ind] = comp_move
 
+#Function to check win
 def win_check(board) :
     win_combos = [[0,1,2], [3,4,5] , [6,7,8],
                   [0,3,6], [1,4,7], [2,5,8],
